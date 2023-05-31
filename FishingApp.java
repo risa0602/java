@@ -2,15 +2,21 @@ import java.util.*;
 public class FishingApp{
 	public static void main(String[] args){
 		//巻取量テーブル
-		int[] LEN_ARR ={20,10,10,5,5,1};
+		final int[] LEN_ARR ={20,10,10,5,5,1};
 		//ダメージテーブル
-		int[] DAMAGE_ARR ={-1,0,0,0,1,1,1,1,1,1};
+		final int[] DAMAGE_ARR ={-1,0,0,0,1,1,1,1,1,1};
 		//ダメージ表記
-		String[] DAMAGE_MESSAGES={"Great!!!","Good","Bad"};
+		final String[] DAMAGE_MESSAGES={"Great!!!","Good","Bad"};
+		//スタート時の長さ
+		final int START_LENGTH = 100;
+		//maxダメージ
+		final int MAX_DAMAGE = 5;
+		//スタート時のダメージ
+		final int START_DAMAGE = 2;
 		//残りの距離
-		int length=100;
+		int length = START_LENGTH;
 		//現在のダメージ
-		int damage = 2;
+		int damage = START_DAMAGE;
 
 		//ランダムインスタンス
 		Random rand = new Random();
@@ -41,7 +47,7 @@ public class FishingApp{
 
 			//出力
 			System.out.println("残り :"+length+"m ");
-			System.out.println("ダメージ :"+damage+"/5");
+			System.out.println("ダメージ :"+damage+"/"+MAX_DAMAGE);
 		}
 		//結果出力
 		System.out.printf("%s%n",length==0?"成功":"失敗");
